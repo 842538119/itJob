@@ -1,0 +1,19 @@
+server:
+  port: 8085
+
+spring:
+    datasource:
+      url: jdbc:mysql://106.15.177.254:3306/itJob
+      username: arilia
+      password: 8662076qq
+      driver-class-name: com.mysql.jdbc.Driver
+ftp:
+  server: 106.15.177.254
+  port: 21
+  username: arilia
+  password: 8662076qq
+  basePath: /data/wwwroot/images/
+
+mybatis-plus:
+  configuration:
+        map-underscore-to-camel-case: true
