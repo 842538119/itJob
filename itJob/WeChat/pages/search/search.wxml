@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<import src="../../components/wxSearch/wxSearch.wxml" />
+
+<view class="wxSearch-all">
+  
+  <view class="city">
+    <text class="city-picker" bindtap="wxChangeCity">{{city}}</text> 
+  </view>
+
+  <view class="input-box">
+    <icon class="search-icon" type="search" size="12" color="#999" />
+    <input class="input-html" type="text" placeholder="搜索职位/公司" bindinput="wxSearchInput" bindfocus="wxSearchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" confirm-type="search" bindconfirm="searchConfirm" />
+  </view>
+  <text class="btn-cancel" bindtap="wxSearchFn">搜索</text>
+  
+ <template is="wxSearch" data="{{wxSearchData}}"/> 
+</view>

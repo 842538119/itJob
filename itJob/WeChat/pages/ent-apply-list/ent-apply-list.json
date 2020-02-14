@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "apply": "/components/apply/apply"
+  },
+  "navigationBarTitleText": "职位投递列表",
+  "enablePullDownRefresh": false
+}

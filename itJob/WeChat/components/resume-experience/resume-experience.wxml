@@ -1,0 +1,14 @@
+<!--components/resume-experience/resume-experience.wxml-->
+<view class="work-date">
+          <icon type="String" class="dian" />
+          <text>{{experience.startTime}} - {{experience.endTime}}</text>
+          <image class="del" bind:tap="delTap" src="{{delIcon}}"></image>
+</view>
+<view bind:tap="onTap">
+        <view class="work-company">{{experience.company}}</view>
+        <view class="work-department">{{experience.department}} - 
+        {{experience.job}} </view>
+        <view class="work-content">
+        <rich-text nodes="{{experience.content}}"></rich-text>
+        </view>
+</view>

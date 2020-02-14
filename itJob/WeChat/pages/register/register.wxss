@@ -1,0 +1,112 @@
+.header{
+  display: flex;
+  flex-direction: row;
+  height: 300rpx;
+  align-items: center;
+  justify-content: center;
+  border-top:1px solid #f5f5f5;
+}
+.register-label{
+  font-size: 60rpx;
+  font-weight: 800;
+  margin-right: 40rpx;
+  line-height: 60rpx;
+  margin-top: 60rpx;
+}
+.middle{
+  display: flex;
+  flex-direction: column;
+  height: 350rpx;
+  align-items: center;
+  justify-content: center;
+}
+.input{
+  display: flex;
+  flex-direction: row;
+}
+.inputImage{
+ width:50rpx;
+ height:50rpx;
+ margin-top: 30rpx;
+ margin-right: 10rpx;
+}
+.numberText {
+  padding: 7px 0px;
+  width:400rpx;
+  flex: block; 
+  text-align: left; 
+  margin-right: 22px; 
+  margin-top: 11px; 
+  color: #cccccc; 
+  font-size: 14px;
+  font-family: "Microsoft soft";
+  border: 1px solid rgb(226, 226, 226); 
+  border-radius:9px;
+}
+.passText {
+  padding: 7px 0px;
+  width:400rpx;
+  flex: block; 
+  text-align: left; 
+  margin-right: 22px; 
+  margin-top: 11px; 
+  color: #cccccc; 
+  font-size: 14px;
+  font-family: "Microsoft soft";
+  border: 1px solid rgb(226, 226, 226); 
+  border-radius:9px;
+  background-image: url(../../images/my.png) no-repeat;
+  background-position: 5px 4px;
+}
+radio{
+   margin-top: 50rpx;
+   margin-right: 25rpx;
+}
+radio .wx-radio-input{
+    border-radius: 50%; 
+   
+    margin-left:25rpx;
+}
+/* 选中后的样式 （可根据设计稿需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;
+   width: 36rpx; 
+   height: 36rpx;
+   line-height: 36rpx;
+   text-align: center;
+   font-size:36rpx; 
+   color:#fff;
+   background: #5397c5;
+   border: 6rpx solid #5397c5;
+
+}
+.login-label{
+  font-size: 30rpx;
+  color:#006699;
+  margin-right: 30rpx;
+  line-height: 20rpx;
+  margin-top: 60rpx;
+  text-decoration: underline;
+  text-decoration-color: #006699;
+}
+.buttons{
+  display: flex;
+  flex-direction: column;
+  height: 200rpx;
+  padding-top: 40rpx;
+  padding-right: 30rpx;
+  align-items: center;
+  justify-content: center;
+}
+.register-button{
+ -webkit-border-radius: 14;
+  -moz-border-radius: 14;
+  border-radius: 14px;
+  text-shadow: 1px 1px 3px #666666;
+  font-family: 微软雅黑;
+  color: #ffffff;
+  font-size: 16px;
+  background: #5397c5;
+  padding: 14px 30px 12px 30px;
+  text-decoration: none;
+}

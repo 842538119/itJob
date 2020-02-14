@@ -1,0 +1,47 @@
+<!--pages/company-detail/company-detail.wxml-->
+
+<swiper class="swiper" indicator-dots="true" autoplay="false" interval="5000" duration="500">
+    <swiper-item>
+        <image src="{{enterpriseInfo.icon}}" class="media-img" mode="aspectFill"/>
+    </swiper-item>
+</swiper>
+
+<view class="company-m">
+  <image class="com-logo" src="{{enterpriseInfo.icon}}" ></image>
+  <view class="com">
+    <view class="com-name">{{enterpriseInfo.name}}</view>
+    <view class="com-address">{{enterpriseInfo.address}}</view>
+  </view>
+</view>
+<view class="content">
+  <view class="title">公司描述</view>
+
+     <rich-text nodes="{{enterpriseInfo.introduction}}"></rich-text>
+</view>
+
+<view class="content">
+  <view class="title">在招职位</view>
+  <view wx:for="{{positionList}}" wx:key="id" catchtap="bindItemTap">
+
+  </view>
+
+  <view class="item" wx:for="{{positionList}}" wx:key="id" catchtap="positionDetailTap">
+    <view class="item-main">
+      <view class="job">
+        <text class="job-position" data-id="{{id}}">{{item.position.name}}</text>
+        <text class="job-Salary">{{item.position.salary}}</text>
+      </view>
+
+      <view class="secondary">
+        <text class="secondary-list">{{item.position.city}}</text>
+        <text class="secondary-list"> | </text>
+        <text class="secondary-list">{{item.position.experience}}</text>
+        <text class="secondary-list"> | </text>
+        <text>{{item.position.education}}</text>
+        <text class="date">{{item.position.date}}</text>
+      </view>
+    </view>
+  </view>
+
+
+</view>

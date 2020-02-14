@@ -1,0 +1,13 @@
+/* pages/resume/edit-resume-project/edit-resume-project.wxss */
+@import "/style/item-cells.wxss";
+@import "/style/blue-btn.wxss";
+.btn-box{
+  margin-top: 10rpx;
+}
+view,input{
+  color: #222;
+  
+}
+text{
+  color: #000000;
+}

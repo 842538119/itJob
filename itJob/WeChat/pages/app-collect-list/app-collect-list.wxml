@@ -1,0 +1,5 @@
+<import src="/style/template/template.wxml"/>
+<view wx:if="{{collectList.length == 0}}"><template is="empty"/></view>
+<view wx:for="{{collectList}}" wx:key="id">
+  <position position="{{item.position}}" enterprise="{{item.enterprise}}" status="{{item.position.status}}" flag="{{editList}}"/>
+</view>

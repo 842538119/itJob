@@ -1,0 +1,61 @@
+<!-- <scroll-view style="height:{{height}};" scroll-top="0"> -->
+ <view class="header" style="overflow:hidden">
+  <view class="position">
+    <view class="posi">
+      <text class="name">{{positionInfo.name}}</text>
+      <view class="pos-type">
+      <image class="pos-type-img" src="./images/type.png"></image>
+      <text class="pos-type-text">{{positionTypeInfo.name}}</text>
+      </view>
+      <text class="salary">{{positionInfo.salary}}</text>
+    </view>
+    <view class="posi-list">
+      <image class="field-img" src="./images/address.png"></image>
+      <text class="field">{{positionInfo.city}}</text>
+      <image class="field-img" src="./images/education.png"></image>
+      <text class="field">{{educationList[positionInfo.education]}}</text>
+      <image class="field-img" src="./images/experience.png"></image>
+      <text class="field">{{experienceList[positionInfo.experience]}}</text>
+    </view>
+  </view>
+  <view class="company-m" data-pid="{{position_content.p_id}}" catchtap="bindPositionDetailTap">
+    <image class="com-logo" src="{{enterpriseInfo.icon}}"></image>
+    <view class="com">
+      <view class="com-name">{{enterpriseInfo.name}}</view>
+      <view class="com-address">{{enterpriseInfo.address}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="content">
+  <view class="title">职位描述</view>
+  <view class="main">
+    
+    <rich-text nodes="{{positionInfo.duties}}"></rich-text>
+  </view>
+</view>
+<view wx:if="{{userType}}">
+<view class="btn-box">
+  <button class="btn-send-resume" size="default" hover-class="btn-send-resume-hover" catchtap="onSubmit" wx:if="{{!isHaveApply}}">投递职位</button>
+  <button  disabled="true" class="btn-send-resume-Applied"  wx:if="{{isHaveApply}}">已投递</button>
+  <collect isHaveCollect="{{isHaveCollect}}" bind:collect="onCollect"/>
+</view>
+</view>
+
+<view wx:if='{{showModal}}'>
+  <view class='mask_layer' bindtap='hiddenModal' />
+  <view class='modal_box'>
+    <view class="title">选择要投递的简历</view>
+    <view class='content'>
+      <picker class='input_show' bindchange="bindPickerChangeResume" value="{{resumeIndex}}" range="{{resumeList}}" range-key="name" >
+      <view class="picker">
+        {{resumeList[resumeIndex].name}}
+      </view>
+    </picker>  
+    </view>
+    <view class='btn1'>
+      <view bindtap='hiddenModal' class='cancel'>取消</view>
+      <view bindtap='sure' class='Sure'>确定</view>
+    </view>
+  </view>
+</view>

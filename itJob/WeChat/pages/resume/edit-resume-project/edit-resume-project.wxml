@@ -1,0 +1,55 @@
+<!--pages/resume/edit-resume-project/edit-resume-project.wxml-->
+<view class="item-cells no-top">
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>项目名称</text>
+    </view>
+    <view class="item-cell-ft blue">
+      <input type="text" bindinput="nameTap" value="{{name}}" placeholder="请输入项目名称..." />
+    </view>
+  </view>
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>主要职责</text>
+    </view>
+    <view class="item-cell-ft blue">
+      <input type="text" bindinput="personJobTap" value="{{personJob}}" placeholder="请输入担任职责..."/>
+    </view>
+  </view>
+
+  <view class="item-cell item-cell-access">
+    <view class="item-cell-bd">
+      <text>开始时间</text>
+    </view>
+    <picker class="item-cell-ft blue" mode="date" value="{{startTime}}" fields="day" start="2000-01-01" end="{{raduationTime}}" bindchange="bindDateChangeStartTime">
+    <view class="picker">
+      {{startTime}}
+    </view>
+  </picker>
+  </view>
+
+  <view class="item-cell item-cell-access">
+    <view class="item-cell-bd">
+      <text>结束时间</text>
+    </view>
+    <picker class="item-cell-ft blue" mode="date" value="{{endTime}}" fields="day" start="{{startTime}}" end="{{raduationTime}}" bindchange="bindDateChangeEndTime">
+    <view class="picker">
+      {{endTime}}
+    </view>
+  </picker>
+  </view>
+
+    <view class="item-cell">
+    <view class="item-cell-bd">
+      <text>主要内容</text>
+    </view>
+  </view>
+  <view class="item-cell-textarea">
+   <textarea class="item-textarea" wx:if="{{!content}}" bindtap="contentTap" placeholder="请输入主要内容..." maxlength="30" />
+    <rich-text wx:if="{{content}}" bindtap="contentTap" nodes="{{content}}"></rich-text>
+  </view>
+
+</view> 
+<view class="btn-box">
+  <button class="btn-sure" size="default" hover-class="btn-sure-hover" catchtap="submitTap"> 保存 </button>
+</view>

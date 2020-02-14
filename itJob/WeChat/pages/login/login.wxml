@@ -1,0 +1,24 @@
+
+<view class="header">
+  <text class="login-label">账号登录</text>
+</view>
+<view class="middle">
+<view class="input">
+<image class="inputImage" src="https://6172-arilia-kof1n-1300615483.tcb.qcloud.la/itJob/%E7%99%BB%E5%BD%95%E7%94%A8%E6%88%B7%E5%90%8D.png?sign=eaac7c7c9b0d91aa450eea84f19f4d7e&t=1577332785" />
+<input class="numberText" placeholder="账号" bindinput="getUsername" /> 
+</view>
+<view class="input">
+<image class="inputImage" src="https://6172-arilia-kof1n-1300615483.tcb.qcloud.la/itJob/%E5%AF%86%E7%A0%81.png?sign=d79b83c7130293c45aa9f1bb35ff4fd3&t=1577333882" />
+<input class="passText" placeholder="密码" password="true" bindinput="getPassword" /> 
+</view>
+<radio-group class="item-right radio-group" bindchange="radioChange">
+          <label class="radio" wx:for="{{items}}">
+               <radio value="{{item.name}}" bindtap="bindtap1" checked="{{item.checked}}"/>{{item.name}}
+          </label>
+</radio-group>
+<text class="register-label" bindtap="toRegister">没有账号？去注册</text>
+</view>
+<view class="buttons">
+<button class="login-button" bindtap="loginByPassword">登录</button>
+<button class="wechat-button" bindtap="loginByWechat">微信授权登录</button>
+</view>

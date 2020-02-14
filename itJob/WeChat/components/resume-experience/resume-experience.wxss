@@ -1,0 +1,35 @@
+/* components/resume-experience/resume-experience.wxss */
+.dian{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 20rpx;
+  border: 4rpx solid #dbe2fc;
+  background-color: #4990E2;
+  margin-right: 10rpx;
+}
+.work-date{
+  color: #666;
+  margin-bottom: 28rpx;
+  position: relative;
+  left: -40rpx;
+}
+.work-company{
+  font-size:30rpx;
+  color: #000000;
+  font-weight:bold;
+  margin-bottom: 20rpx;
+}
+.work-department{
+    color: rgb(0, 0, 0);
+    margin-bottom: 28rpx;
+}
+.work-content{
+  color: rgb(124, 124, 124);
+  padding-bottom: 60rpx;
+}
+.del{
+  width: 38rpx;
+  height: 38rpx;
+  position:absolute;
+  padding-left:260rpx;
+}

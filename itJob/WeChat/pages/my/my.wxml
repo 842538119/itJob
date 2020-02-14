@@ -1,0 +1,91 @@
+<!--pages/my/my.wxml-->
+<view class="my-header">
+  <!-- <block wx:if="{{isShow}}">
+     <image class="user-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill" bindtap="imgTap"></image> 
+    <text class="user-name">{{userInfo.nickName}}</text> -->
+    <!--<text class="user-text">{{myself}}</text>-->
+  <!-- </block> -->
+
+  <!-- <block wx:else> -->
+   <image class="user-avatar" wx:if="{{faceImg}}" src="{{faceImg}}" mode="aspectFill"></image>
+   <image class="user-avatar" wx:else src="/images/face.png" mode="aspectFill"></image>
+    <view>
+      <block wx:if="{{hasUser}}">
+          <text class="user-name">{{name}}</text>
+      </block>
+      <block wx:else>
+           <text class="register" bindtap='login'>登录</text>
+      </block>
+    </view> 
+</view>
+
+<view class="item-cells">
+  <view class="item-cell item-cell-access" catchtap="editInfoTap">
+    <view class="item-cell-bd">
+      <image class="item-icon" src="images/personal.png" /><text class="item-text">个人信息</text>
+    </view>
+    <view class="item-cell-ft"></view>
+  </view>
+</view>
+
+<view class="item-cells" wx:if='{{user.type=="求职者"}}'>
+  <view class="item-cell item-cell-access" catchtap="resumeTap">
+    <view class="item-cell-bd">
+      <image class="item-icon" src="images/resume.png" /><text class="item-text">我的简历</text>
+    </view>
+    <view class="item-cell-ft"></view>
+  </view>
+</view>
+
+<view class="item-cells" wx:if='{{user.type=="企业"}}'>
+  <view class="item-cell item-cell-access" catchtap="addPositionTap">
+    <view class="item-cell-bd">
+      <image class="item-icon" src="images/position.png" /><text class="item-text">发布职位</text>
+    </view>
+    <view class="item-cell-ft"></view>
+  </view>
+</view>
+
+<view class="item-cells" wx:if='{{user.type=="企业"}}'>
+  <view class="item-cell item-cell-access" catchtap="editPositionTap">
+    <view class="item-cell-bd">
+      <image class="item-icon" src="images/position.png" /><text class="item-text">编辑职位</text>
+    </view>
+    <view class="item-cell-ft"></view>
+  </view>
+</view>
+
+<view class="item-cells" wx:if='{{user.type=="企业"}}'>
+  <view class="item-cell item-cell-access" catchtap="appliesTap">
+    <view class="item-cell-bd">
+      <image class="item-icon" src="images/position.png" /><text class="item-text">投递列表</text>
+    </view>
+    <view class="item-cell-ft"></view>
+  </view>
+</view>
+
+<view class="item-cells" wx:if='{{user.type=="求职者"}}'>
+  <view class="item-cell item-cell-access" catchtap="myDeliveryTap">
+    <view class="item-cell-bd">
+      <image class="item-icon" src="images/apply.png" /><text class="item-text">我的投递</text>
+    </view>
+    <view class="item-cell-ft"></view>
+  </view>
+</view>
+
+ <view class="item-cells" wx:if='{{user.type=="求职者"}}'>
+  <view class="item-cell item-cell-access" catchtap="collectTap">
+    <view class="item-cell-bd">
+      <image class="item-icon" src="images/collect.png" /><text class="item-text">我的收藏</text>
+    </view>
+    <view class="item-cell-ft"></view>
+  </view>
+</view> 
+
+ <view class="item-cells ext-box" hidden='{{usersetting}}'>
+  <view class="item-cell item-cell-access" bindtap='signOut'>
+    <view class="item-cell-bd">
+      <text>退出当前账号</text>
+    </view>
+  </view>
+</view> 

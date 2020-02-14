@@ -1,0 +1,73 @@
+.item{
+  display: flex;
+  width: 100%;
+  background-color: #fff; 
+}
+.item-imgs{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding-top: 25rpx;
+ padding-right: 30rpx;
+}
+.item-edit-button{
+  width: 60rpx;
+  height: 60rpx;
+  margin-top:10rpx;
+  padding-left:20rpx;
+}
+.item-img {
+  padding: 38rpx 28rpx;
+}
+.img{
+  width: 140rpx;
+  height: 140rpx;
+}
+.item-main{
+  flex: 1;
+  padding: 32rpx 28rpx 32rpx 0;
+  border-bottom: 1rpx solid #dcdcdc;
+  line-height: 1.4;
+}
+
+.job{
+  margin-bottom: 4rpx;
+  padding-right: 80rpx;
+  position: relative;
+}
+.job-status{
+   font-size: 28rpx;
+   margin-left:15rpx;
+   color: #5397c5;
+}
+.job-position{
+  font-size: 34rpx;
+  color: #222;
+}
+.job-Salary{
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #5397c5;
+  position: absolute;
+  padding-top: 10rpx;
+  padding-right:10rpx;
+  top: 0;
+  right: 0;
+  z-index: 2;  
+}
+.company{
+  color: rgb(78, 78, 78);
+  font-size: 28rpx;
+  margin-bottom: 4rpx;
+}
+.secondary{
+  font-size: 28rpx;
+  color: #999;
+  padding-top: 20rpx;
+}
+.secondary-list{
+  
+}
+.date{
+  float: right;
+}

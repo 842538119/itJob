@@ -1,0 +1,5 @@
+<template name="empty">
+<view class="empty-full">
+  <image src="/images/empty-search.png" class="empty-image"/>
+  <view class="empty-font">暂无数据...</view></view>
+</template>

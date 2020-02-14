@@ -1,0 +1,30 @@
+<!--components/position/position.wxml-->
+<view name="position-item">
+  <view class="item">
+  <view class="item-img" wx:if="{{!flag}}">
+      <image class="img" src="{{enterprise.icon}}"></image>
+  </view>
+    <view class="item-imgs" wx:if="{{flag}}">
+      <image class="item-edit-button" bind:tap="editTap" src="{{editImg}}"></image>
+      <image class="item-edit-button" bind:tap="revokeTap" src="{{delImg}}"></image>
+    </view>
+    <view class="item-main" bind:tap="onTap">
+      <view class="job">
+        <text class="job-position" data-id="{{id}}">{{position.name}}</text>
+        <text class="job-status" wx:if="{{flag}}">  {{statusList[status]}}</text>
+        <text class="job-Salary">{{position.salary}}</text>
+      </view>
+      <view class="company">
+        <text>{{enterprise.name}}</text>
+      </view>
+      <view class="secondary">
+        <text class="secondary-list">{{position.city}}</text>
+        <text> | </text>
+        <text class="secondary-list">{{experienceList[position.experience]}}</text>
+        <text> | </text>
+        <text>{{educationList[position.education]}}</text>
+        <text class="date">{{position.date}}</text>
+      </view>
+    </view>
+  </view>
+</view>

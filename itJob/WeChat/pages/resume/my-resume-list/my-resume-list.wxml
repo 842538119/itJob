@@ -1,0 +1,19 @@
+<view wx:for="{{resumeList}}" wx:key="id">
+<resume bind:delete="onDel" bind:name="onName" resume="{{item}}" flag="{{editList}}"/>
+</view>
+<view wx:if='{{showModal}}'>
+  <view class='mask_layer' bindtap='hiddenModal' />
+  <view class='modal_box'>
+    <view class="title">输入简历名字</view>
+    <view class='content'>
+      <text class='modalMsg'></text>
+      <input value="{{name}}" class='input_show' bindinput='changeResumeName' bindfocus='bindfocus' bindblur='bindblur' placeholder='在此输入简历名字...' />
+      
+    </view>
+    <view class='btn1'>
+      <view bindtap='hiddenModal' class='cancel'>取消</view>
+      <view bindtap='sure' class='Sure'>确定</view>
+    </view>
+  </view>
+</view>
+<button bind:tap="showModal" class="add" style='width:100%;'>新增简历</button>

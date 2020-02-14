@@ -1,0 +1,101 @@
+ <!--pages/my-resume/my-resume.wxml-->
+ 
+<!--个人信息  -->
+<view class="user-images">
+    <view class="images-box">
+    <view class="panel-bd">
+    <view class="image-box">
+        <image wx:if="{{personInfo.icon}}" src="{{personInfo.icon}}" mode="aspectFill"></image>
+        <image wx:if="{{!personInfo.icon}}" src="{{avatarUrl}}" mode="aspectFill"></image>
+    </view>
+    <view class="base">
+      <text>姓名 :</text>
+      <text class="data-text">{{personInfo.name}}</text>
+    </view>
+    <view class="base">
+      <text>性别 :</text>
+      <text class="data-text">{{genderlist[personInfo.sex]}}</text>
+    </view>
+    <view class="base">
+      <text>年龄 :</text>
+      <text class="data-text">{{personInfo.age}}</text>
+    </view>
+    <view class="base">
+      <text>所在城市 :</text>
+      <text class="data-text">{{personInfo.city}}</text>
+    </view>
+    <view class="base">
+      <text>联系手机 :</text>
+      <text class="data-text">{{personInfo.phone}}</text>
+    </view>
+    <view class="base">
+      <text>联系邮箱 :</text>
+      <text class="data-text">{{personInfo.email}}</text>
+    </view>
+    </view>
+  </view>
+</view>
+
+<!--求职信息  -->
+
+<view class="panel">
+  <view class="panel-hd">
+    <text class="title-text">求职信息</text>
+  </view>
+  <view class="panel-bd"> 
+    <view class="base">
+      <text>期望职位 :</text>
+      <text class="data-text">{{resumeBaseInfo.position}}</text>
+    </view>
+    <view class="base">
+      <text>期望薪资 :</text>
+      <text class="data-text">{{salaryList[resumeBaseInfo.salary]}}</text>
+    </view>
+    <view class="base">
+      <text>期望城市 :</text>
+      <text class="data-text">{{resumeBaseInfo.city}}</text>
+    </view>
+  </view>
+</view>
+
+<!--教育经历  -->
+<view class="panel">
+  <view class="panel-hd">
+    <text class="title-text">教育经历</text>
+  </view>
+  <view class="panel-bd">
+    <view class="box">
+      <view class="work" wx:for="{{resumeEduList}}" wx:key="id">
+        <education education="{{item}}"/>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--实习经历  -->
+<view class="panel">
+  <view class="panel-hd">
+    <text class="title-text">实习经历</text>
+  </view>
+  <view class="panel-bd">
+    <view class="box">
+      <view class="work" wx:for="{{resumeExpList}}"  wx:key="id">
+        <experience experience="{{item}}"/>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--项目经历  -->
+<view class="panel">
+  <view class="panel-hd">
+    <text class="title-text">项目经历</text>
+  </view>
+  <view class="panel-bd">
+    <view class="box">
+      <view class="work" wx:for="{{resumeProjectList}}"  wx:key="id">
+        <project project="{{item}}"/>
+      </view>
+    </view>
+  </view>
+</view>

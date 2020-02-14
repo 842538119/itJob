@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "position": "/components/position/position"
+  },
+  "navigationBarTitleText": "我的职位列表",
+  "enablePullDownRefresh": false
+}

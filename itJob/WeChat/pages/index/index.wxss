@@ -1,0 +1,17 @@
+@import "/components/position/position.wxss";
+@import "../search/search.wxss";
+/**index.wxss**/
+
+.position-container{
+  padding-top: 100rpx;
+}
+
+.loading{
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    color: #999;
+    font-size: 28rpx;
+}
+

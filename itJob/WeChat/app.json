@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/ent-apply-list/ent-apply-list",
+    "pages/app-apply-list/app-apply-list",
+    "pages/login/login",
+    "pages/resume/my-resume-list/my-resume-list",
+    "pages/resume/my-resume/my-resume",
+    "pages/resume/view-resume/view-resume",
+    "pages/resume/edit-resume-exp/edit-resume-exp",
+    "pages/resume/edit-resume-edu/edit-resume-edu",
+    "pages/resume/edit-resume-base/edit-resume-base",
+    "pages/resume/edit-resume-project/edit-resume-project",
+    "pages/editor/editor",
+    "pages/ent-position-list/ent-position-list",
+    "pages/ent-position-add/ent-position-add",
+    "pages/ent-position-edit/ent-position-edit",
+    "pages/ent-detail/ent-detail",
+    "pages/position-detail/position-detail",
+    "pages/edit-my-app/edit-my-app",
+    "pages/edit-my-ent/edit-my-ent",
+    "pages/register/register",
+    "pages/register-information/register-information",
+    "pages/app-collect-list/app-collect-list",
+    "pages/change-city/change-city"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#f6f6f8",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f6f6f8",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#4990E2",
+    "backgroundColor": "#f1f1f1",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/index_active.png",
+        "iconPath": "images/index.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/message_active.png",
+        "iconPath": "images/message.png",
+        "pagePath": "pages/index/index",
+        "text": "消息"
+      },
+      {
+        "selectedIconPath": "images/my_active.png",
+        "iconPath": "images/my.png",
+        "pagePath": "pages/my/my",
+        "text": "我"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

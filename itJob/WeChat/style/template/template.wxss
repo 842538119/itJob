@@ -1,0 +1,18 @@
+.empty-full{
+   height: 100%;
+  width: 100%;
+  position: fixed;/*定位*/
+  text-align: center;/*文本居中*/
+  display:flex;/*将对象作为弹性伸缩盒显示。（伸缩盒最新版本css3）*/
+  flex-direction:column;/*属性决定主轴的方向垂直方向，起点在上沿*/
+  align-items:center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
+}
+.empty-image{
+  width: 100rpx;
+  height:100rpx;
+}
+.empty-font{
+ color:#bfbfbf;
+  margin: 10rpx 0;
+} 

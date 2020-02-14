@@ -1,0 +1,28 @@
+<!--components/resume/resume.wxml-->
+<view name="position-item">
+  <view class="item">
+  <view class="item-img">
+      <image class="img" src="{{applicant.icon}}"></image>
+  </view>
+    <view class="item-main" bind:tap="onTap">
+      <view class="job">
+        <text class="job-position" >{{applicant.name}}</text>
+        <block wx:if="{{apply.status==0}}">
+        <button style="width:156rpx;min-height:50rpx;height:50rpx" class="btn-sure" catch:tap="sureTap" hover-class="btn-sure-hover"> 处理 </button>
+        <button style="width:156rpx;min-height:50rpx;height:50rpx" class="btn-sure-resume" bind:tap="resumeTap" hover-class="btn-sure-hover"> 简历 </button>
+        </block>
+      </view>
+      <view class="company">
+        <text>申请职位: {{position.name}}</text>
+      </view>
+      <view class="secondary">
+        <text class="secondary-list">{{genderList[applicant.sex]}}</text>
+        <text> | </text>
+        <text class="secondary-list">{{applicant.age}}岁</text>
+        <text> | </text>
+        <text class="secondary-list">{{educationList[applicant.education]}}</text>
+        <text class="date">{{apply.date}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<!--components/resume-education/resume-education.wxml-->
+<view class="work-date">
+          <icon type="String" class="dian" />
+          <text>{{education.startYear}} - {{education.endYear}}</text>
+          <image class="del" bind:tap="delTap" src="{{delIcon}}"></image>
+</view>
+    <view bind:tap="onTap">
+        <view class="work-company">{{education.school}}</view>
+        <view class="work-content">
+          <text class="edu">{{edulevelList[education.education]}}</text>
+          <text>{{education.profession}}</text>
+        </view>
+    </view>

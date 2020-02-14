@@ -1,0 +1,49 @@
+<!--pages/edit-resume-base/edit-resume-base.wxml-->
+<view class="item-cells no-top">
+
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>期望职位</text>
+    </view>
+    <view class="item-cell-ft blue">
+      <input bindinput="positionTap" placeholder-style="color:#999;font-weight:bold;" type="text" maxlength="12" value="{{position}}" placeholder="请输入期望职位" />
+    </view>
+  </view>
+
+  <view class="item-cell item-cell-access">
+    <view class="item-cell-bd">
+      <text>期望薪资</text>
+    </view>
+    <picker class="item-cell-ft blue" bindchange="bindPickerChangeSalary" value="{{salaryIndex}}" range="{{salaryList}}">
+      <view class="picker">
+        {{salaryList[salaryIndex]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>期望城市</text>
+    </view>
+    <view class="item-cell-ft blue">
+       <input bindinput="cityTap" type="text" maxlength="11" value="{{city}}" placeholder="请输入期望城市" /> 
+    </view>
+  </view>
+ 
+</view>
+<!--<view class="item-cells">
+  <view class="item-cell">
+    <view class="item-cell-bd">
+      <text>一句话介绍</text>
+    </view>
+    <view class="item-cell-ft">
+      <text class="blue">{{selfLen}}</text>/30
+    </view>
+  </view>
+  <view class="item-cell-textarea">
+    <textarea bindinput="countSelfFun" class="item-textarea" value="{{myself}}" placeholder="用一句话介绍自己" maxlength="30" />
+  </view>
+</view>-->
+<view class="btn-box">
+  <button class="btn-sure" size="default" hover-class="btn-sure-hover" catchtap="submitResumeBaseTap"> 保存 </button>
+</view>

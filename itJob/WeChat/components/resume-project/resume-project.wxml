@@ -1,0 +1,13 @@
+<!--components/resume-project/resume-project.wxml-->
+<view class="work-date">
+          <icon type="String" class="dian" />
+          <text>{{project.startTime}} - {{project.endTime}}</text>
+          <image class="del" bind:tap="delTap" src="{{delIcon}}"></image>
+</view>
+<view bind:tap="onTap">
+        <view class="work-company">{{project.name}}</view>
+        <view class="work-department">{{project.personJob}}</view>
+        <view class="work-content">
+          <rich-text nodes="{{project.content}}"></rich-text>
+        </view>
+</view>

@@ -1,0 +1,92 @@
+<!--pages/edit-my/edit-my.wxml-->
+<view class="item-cells no-top">
+  <view class="item-cell item-cell-access item-cell-image" catchtap="uploadImgTap">
+    <view class="item-cell-bd">
+      <text>头像</text>
+    </view>
+    <view class="item-cell-ft">
+      <image wx:if="{{faceImg}}" src="{{faceImg}}"></image>
+      <image wx:else src="/images/small_avatar.png"></image>
+    </view>
+  </view>
+</view>
+<view class="item-cells">
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>企业名</text>
+    </view>
+    <view class="item-cell-ft blue">
+      <input bindinput="nameTap" type="text" maxlength="15" value="{{name}}" placeholder="企业名"/>
+    </view>
+  </view>
+
+  <view class="item-cell item-cell-access">
+    <view class="item-cell-bd">
+      <text>公司类型</text>
+    </view>
+
+    <picker class="item-cell-ft blue" bindchange="bindPickerChangeType" value="{{type}}" range="{{typelist}}">
+      <view class="picker">
+        {{typelist[type]}}
+      </view>
+    </picker>
+  </view> 
+
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>融资情况</text>
+    </view>
+    <view class="item-cell-ft blue">
+      <input bindinput="financingTap" type="text" maxlength="8" value="{{financing}}" placeholder="请输入融资情况"/>
+    </view>
+  </view>
+
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>联系方式</text>
+    </view>
+    <view class="item-cell-ft blue">
+      <input bindinput="phoneTap" type="text" maxlength="15" value="{{phone}}" placeholder="请输入联系方式"/>
+    </view>
+  </view>
+
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>邮箱</text>
+    </view>
+    <view class="item-cell-ft blue">
+      <input bindinput="emailTap" type="text" maxlength="28" value="{{email}}" placeholder="请输入邮箱"/>
+    </view>
+  </view>
+
+  <view class="item-cell">
+    <view class="item-cell-bd">
+      <text>地址</text>
+    </view>
+    <view class="item-cell-ft">
+      <text class="blue">{{addressLen}}</text>/25
+    </view>
+  </view>
+  <view class="item-cell-textarea">
+    <textarea bindinput="addressTap" class="item-textarea" value="{{address}}" placeholder="请输入地址" 
+    maxlength="25" />
+  </view>
+</view>
+
+<view class="item-cells">
+  <view class="item-cell">
+    <view class="item-cell-bd">
+      <text>公司简介</text>
+    </view>
+    <view class="item-cell-ft">
+      <text class="blue">{{selfLen}}</text>/100
+    </view>
+  </view>
+  <view class="item-cell-textarea">
+    <textarea bindinput="introductionTap" class="item-textarea-introduction" value="{{introduction}}" placeholder="请输入公司简介" maxlength="100" />
+  </view>
+</view>
+
+<view class="btn-box">
+  <button catchtap="submitTap" class="btn-sure" size="default" hover-class="btn-sure-hover"> 提交 </button>
+</view>

@@ -1,0 +1,26 @@
+<!--components/resume/resume.wxml-->
+<view name="position-item">
+  <view class="item">
+  <view class="item-img" wx:if="{{!flag}}">
+      <image class="img" src="{{applicant.icon}}"></image>
+  </view>
+    <view class="item-imgs" wx:if="{{flag}}">
+      <image class="item-edit-button" bind:tap="editTap" src="{{editImg}}"></image>
+      <image class="item-edit-button" bind:tap="delTap" src="{{delImg}}"></image>
+    </view>
+    <view class="item-main" bind:tap="onTap">
+      <view class="job">
+        <text wx:if="{{flag}}" class="job-position" >{{resume.name}}</text>
+        <image wx:if="{{flag}}" class="item-edit-button1" catch:tap="nameTap" src="{{editNameImg}}"></image>
+        <text class="job-Salary">{{salaryList[resume.salary]}}</text>
+      </view>
+      <view class="company">
+        <text>意向职位: {{resume.position}}</text>
+      </view>
+      <view class="secondary">
+        <text class="secondary-list">意向城市: {{resume.city}}</text>
+        <text class="date">{{resume.date}}</text>
+      </view>
+    </view>
+  </view>
+</view>

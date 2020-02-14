@@ -1,0 +1,82 @@
+<!--pages/edit-my/edit-my.wxml-->
+<view class="item-cells">
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>岗位名称</text>
+    </view>
+    <view class="item-cell-ft blue">
+      <input bindinput="nameTap" type="text" maxlength="10" 
+      value="{{positionInfo.name}}" placeholder="请输入岗位名称"/>
+    </view>
+  </view>
+
+  <view class="item-cell item-cell-access">
+    <view class="item-cell-bd">
+      <text>岗位类别</text>
+    </view>
+
+    <picker class="item-cell-ft blue" bindchange="bindPickerChangeType" 
+    value="{{positionTypeList[positionTypeIndex].name}}" range="{{positionTypeList}}" range-key="name">
+      <view class="picker">
+        {{positionTypeList[positionTypeIndex].name}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>工作城市</text>
+    </view>
+    <view class="item-cell-ft blue">
+      <input bindinput="cityTap" type="text" maxlength="8" value="{{positionInfo.city}}" placeholder="请输入工作城市"/>
+    </view>
+  </view>
+
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>薪资情况</text>
+    </view>
+    <view class="item-cell-ft blue">
+      <input bindinput="salaryTap" type="text" maxlength="8" value="{{positionInfo.salary}}" placeholder="请输入薪资情况"/>
+    </view>
+  </view>
+
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>学历要求</text>
+    </view>
+   <picker class="item-cell-ft blue" bindchange="bindPickerChangeEducation" 
+    value="" range="{{educationList}}" >
+      <view class="picker">
+        {{educationList[education]}}
+      </view>
+    </picker>
+  </view>
+
+ <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>经验要求</text>
+    </view>
+   <picker class="item-cell-ft blue" bindchange="bindPickerChangeExperience" 
+    value="" range="{{experienceList}}" >
+      <view class="picker">
+        {{experienceList[experience]}}
+      </view>
+    </picker>
+  </view> 
+</view>
+
+<view class="item-cells">
+  <view class="item-cell">
+    <view class="item-cell-bd">
+      <text>岗位职责</text>
+    </view>
+  </view>
+  <view class="item-cell-textarea">
+  <textarea wx:if="{{!duties}}" bindtap="dutiesTap" class="item-textarea" placeholder="点此编辑..." maxlength="30" />
+    <rich-text  wx:if="{{duties}}" nodes="{{duties}}" bindtap="dutiesTap"></rich-text>
+  </view>
+</view>
+<view class="btn-box">
+  <button catchtap="submitTap" class="btn-sure" size="default" hover-class="btn-sure-hover"> 保存 </button>
+</view>

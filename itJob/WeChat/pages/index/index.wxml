@@ -1,0 +1,12 @@
+
+<include src="../search/search.wxml"/>
+<view class="position-container">
+ 
+  <view wx:for="{{positionList}}" wx:key="id">
+  <position position="{{item.position}}" enterprise="{{item.enterprise}}" status="{{item.position.status}}" flag="{{editList}}"/>
+  </view>
+  <view class="loading" hidden="{{loadingHidden}}">{{loadingText}}</view>
+  
+</view>
+
+

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "resume": "/components/resume/resume"
+  },
+  "navigationBarTitleText": "我的简历列表",
+  "enablePullDownRefresh": false
+}

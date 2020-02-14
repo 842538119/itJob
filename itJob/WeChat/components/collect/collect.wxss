@@ -1,0 +1,8 @@
+.image-collect{
+  width:80rpx;
+  height: 80rpx;
+  float:right;
+  position:absolute;
+  left:75%;
+  bottom: 32rpx;
+}

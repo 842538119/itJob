@@ -1,0 +1,9 @@
+{   
+  "usingComponents": {
+    "experience": "/components/resume-experience/resume-experience",
+    "education":"/components/resume-education/resume-education",
+    "project":"/components/resume-project/resume-project"
+  },
+    "navigationBarTitleText": "简历详情",
+    "enablePullDownRefresh": false
+}

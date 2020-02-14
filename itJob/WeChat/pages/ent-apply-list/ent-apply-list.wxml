@@ -1,0 +1,55 @@
+<import src="/style/template/template.wxml"/>
+<view class='topTabSwiper'>
+  <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>已申请</view>
+  <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'>待沟通</view>
+  <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>不合适</view>
+  <view class='tab  {{currentData == 3 ? "tabBorer" : ""}}' data-current="3" bindtap='checkCurrent'>已撤销</view>
+</view>
+<swiper current="{{currentData}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+
+  <swiper-item>
+  <view wx:if="{{applyList.length == 0}}"><template is="empty"/></view>
+  <view wx:for="{{applyList}}" wx:if="{{currentData == 0}}" wx:key="id">
+  <apply applicant="{{item.applicant}}" position="{{item.position}}" apply="{{item.apply}}" resumeId="{{item.resume.id}}" bind:sure="submitTap"/>
+  </view>
+  </swiper-item>
+
+  <swiper-item>
+    <view wx:if="{{applyList.length == 0}}"><template is="empty"/></view>
+  <view wx:for="{{applyList}}" wx:if="{{currentData == 1}}" wx:key="id">
+  <apply applicant="{{item.applicant}}" position="{{item.position}}" apply="{{item.apply}}" resumeId="{{item.resume.id}}" bind:sure="submitTap"/>
+  </view>
+  </swiper-item>
+
+  <swiper-item>
+    <view wx:if="{{applyList.length == 0}}"><template is="empty"/></view>
+  <view wx:for="{{applyList}}" wx:if="{{currentData == 2}}" wx:key="id">
+  <apply applicant="{{item.applicant}}" position="{{item.position}}" apply="{{item.apply}}" resumeId="{{item.resume.id}}" bind:sure="submitTap"/>
+  </view>
+  </swiper-item>
+
+  <swiper-item>
+  <view wx:if="{{applyList.length == 0}}"><template is="empty"/></view>
+  <view wx:for="{{applyList}}" wx:if="{{currentData == 3}}" wx:key="id">
+  <apply applicant="{{item.applicant}}" position="{{item.position}}" apply="{{item.apply}}" resumeId="{{item.resume.id}}" bind:sure="submitTap"/>
+  </view>
+  </swiper-item>
+</swiper>
+
+<view wx:if='{{showModal}}'>
+  <view class='mask_layer' bindtap='hiddenModal' />
+  <view class='modal_box'>
+    <view class="title">选择要处理的状态</view>
+    <view class='content'>
+      <picker class='input_show' bindchange="bindPickerChangeStatus" value="{{statusIndex}}" range="{{submitStatusList}}">
+      <view class="picker">
+        {{submitStatusList[statusIndex]}}
+      </view>
+    </picker>  
+    </view>
+    <view class='btn1'>
+      <view bindtap='hiddenModal' class='cancel'>取消</view>
+      <view bindtap='sure' class='Sure'>确定</view>
+    </view>
+  </view>
+</view>

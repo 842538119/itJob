@@ -1,0 +1,58 @@
+<!--pages/edit-resume-edu-detail/edit-resume-edu-detail.wxml-->
+<view class="item-cells no-top">
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>学校名称</text>
+    </view>
+    <view class="item-cell-ft blue">
+      <input type="text" bindinput="schoolTap" value="{{school}}" placeholder="请输入学校名称..." />
+    </view>
+  </view>
+  <view class="item-cell item-cell-input">
+    <view class="item-cell-bd">
+      <text>专业名称</text>
+    </view>
+    <view class="item-cell-ft blue">
+      <input type="text" bindinput="professionTap" value="{{profession}}" placeholder="请输入专业名称..."/>
+    </view>
+  </view>
+  
+  <view class="item-cell item-cell-access">
+    <view class="item-cell-bd">
+      <text>学历</text>
+    </view>
+    
+    <picker class="item-cell-ft blue" bindchange="bindPickerChangeEduLevel" value="{{edulevelIndex}}" range="{{edulevelList}}">
+      <view class="picker">
+        {{edulevelList[edulevelIndex]}}
+      </view>
+    </picker>
+  </view>
+
+  <view class="item-cell item-cell-access">
+    <view class="item-cell-bd">
+      <text>入学时间</text>
+    </view>
+    <picker class="item-cell-ft blue" mode="date" value="{{startYear}}" fields="month" start="2000-09" end="{{raduationTime}}" bindchange="bindDateChangeStartYear">
+    <view class="picker">
+      {{startYear}}
+    </view>
+  </picker>
+  </view>
+
+  <view class="item-cell item-cell-access">
+    <view class="item-cell-bd">
+      <text>毕业时间</text>
+    </view>
+    <picker class="item-cell-ft blue" mode="date" value="{{endYear}}" fields="month" start="{{startYear}}" end="2030-06" bindchange="bindDateChangeEndYear">
+    <view class="picker">
+      {{endYear}}
+    </view>
+  </picker>
+  </view>
+
+</view> 
+<view class="btn-box">
+  <button class="btn-sure" size="default" hover-class="btn-sure-hover" catchtap="submitSchoolTap"> 保存 </button>
+</view>
+
